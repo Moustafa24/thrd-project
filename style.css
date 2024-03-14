@@ -1,0 +1,218 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  background-color: #7881593f;
+}
+
+:root {
+  --accent-color: #a7af74;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 3px;
+}
+
+::selection {
+  background-color: #3f3f3f;
+  color: var(--accent-color);
+}
+
+/* ==================== start heading ====================== */
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading h1 {
+  padding: 20px;
+  margin: 20px;
+  font-size: 40px;
+  position: relative;
+}
+
+.heading h1::first-letter {
+  font-size: 40px;
+  color: var(--accent-color);
+}
+
+.heading h1::before {
+  content: "";
+  position: absolute;
+  left: 45%;
+  bottom: 10px;
+  background-color: var(--accent-color);
+  width: 45%;
+  height: 3px;
+}
+
+.heading .filter-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+.heading .filter-btns span {
+  border: 1px solid var(--accent-color);
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+}
+
+.heading .filter-btns span:first-child {
+  border: none;
+  background-color: #3f3f3f;
+  color: var(--accent-color);
+}
+
+.heading .filter-btns span:first-child:hover {
+  box-shadow: 15px 0px 0px #414141;
+  transform: translateX(-15px);
+}
+
+.heading .filter-btns span:hover {
+  cursor: pointer;
+  box-shadow: -5px 5px 7px #a2a2a2;
+  transform: translateY(-5px);
+}
+/* ==================== end heading ====================== */
+/* ===================== start menu ======================= */
+/* .menu {
+  display: none;
+} */
+
+.menu-items {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(850px, 1fr));
+  place-content: center;
+  place-items: center;
+  gap: 30px;
+}
+
+.menu-item {
+  background-color: #8da090;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #979797;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.menu-item .img {
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-item img {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-items .menu-item .item-content {
+  padding: 20px;
+  /* height: 400px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.menu-items .menu-item .item-content .item-heading {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.menu-items .menu-item .item-content .item-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3f3f3f;
+  width: 100%;
+  height: 1px;
+}
+
+.menu-items .menu-item .item-content .item-heading span {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.menu-items .menu-item .item-content p {
+  padding: 20px;
+  font-size: 18px;
+  color: #3f3f3f;
+}
+/* ===================== end menu ======================= */
+/* =================== responsive ====================== */
+
+@media (width <=800px) {
+  .menu-item {
+    width: 250%;
+  }
+
+  .menu-items {
+    grid-template-columns: none;
+  }
+
+  .main-menu {
+    scale: 0.5;
+    height: 10vh;
+  }
+
+  .menu-item .img {
+    width: 1400px;
+  }
+}
+/* ========================= preloader ========================= */
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.preloader div {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: 0 10px;
+  background-color: rgb(70, 70, 165);
+  border-radius: 50%;
+  animation: upanddown 0.6s ease-in-out 0s infinite alternate;
+}
+
+.preloader .two {
+  animation-delay: 0.2s;
+}
+
+.preloader .three {
+  animation-delay: 0.4s;
+}
+
+@keyframes upanddown {
+  to {
+    opacity: 0.2;
+    transform: translateY(-50px);
+  }
+}
